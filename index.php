@@ -29,7 +29,7 @@ $country = $data['data']['country'];
 $region = $data['data']['region']; 
 $city = $data['data']['city'];
 $bak = getenv("BAK");
-$url = "http://api.map.baidu.com/telematics/v3/weather?output=json&ak=".$bak."&location=".$region.$city;
+$url = "http://api.map.baidu.com/telematics/v3/weather?output=json&ak=3212ecffc58cc7d2e784eabe4a5c8c34".$bak."&location=".$region.$city;
 $curl = curl_init(); 
 curl_setopt($curl, CURLOPT_URL, $url); 
 curl_setopt($curl, CURLOPT_HEADER, 0);  
@@ -65,6 +65,7 @@ imagettftext($im, 16, 0, 10, 72, $black, $font, '今天是'.date('Y年n月j日')
 imagettftext($im, 16, 0, 10, 104, $black, $font,$weather );//ip
 imagettftext($im, 15, 0, 10, 140, $black, $font,'您的IP是:'.$ip.'  :('.$counter.')' );
 imagettftext($im, 15, 0, 10, 175, $black, $font,'您使用的是'.$os.'操作系统');
+
 imagettftext($im, 16, 0, 10, 205, $red, $font,$get);  
 // ImageGif($im);
 imagejpeg($im,null,30);
