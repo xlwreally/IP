@@ -4,7 +4,7 @@
 <?php
 header("Content-type: image/JPEG");
 $r = rand(0,10);
-$im = imagecreatefromjpeg( "xhxh2.jpg"); 
+$im = imagecreatefromjpeg( "xupt.jpg"); 
 
 $ip = $_SERVER["HTTP_X_FORWARDED_FOR"];// $_SERVER["REMOTE_ADDR"];
 $weekarray=array("日","一","二","三","四","五","六"); //先定义一个数组
@@ -60,7 +60,8 @@ if (strlen($address) == 2) {
     $address = ' 太阳系 ';
 }
 //输出
-imagettftext($im, 16, 0, 10, 40, $black, $font,'皇家邮电大学欢迎来自'.$address.'的朋友');
+imagettftext($im, 16, 0, 10, 40, $blue, $font,'皇家邮电大学');
+imagettftext($im, 16, 0, 10, 40, $black, $font,'欢迎来自'.$address.'的朋友');
 imagettftext($im, 16, 0, 10, 72, $black, $font, '今天是'.date('Y年n月j日')." 星期".$weekarray[date("w")]);//当前时间添加到图片
 imagettftext($im, 16, 0, 10, 104, $black, $font,$weather );//ip
 imagettftext($im, 15, 0, 10, 140, $black, $font,'您的IP是:'.$ip.'  :('.$counter.')' );
